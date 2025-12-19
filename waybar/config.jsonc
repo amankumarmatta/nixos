@@ -6,6 +6,7 @@
         "modules-left": ["hyprland/workspaces"],
         "modules-center": ["custom/weather", "clock"],
         "modules-right": [
+          "custom/swaync",
           "group/tray-expander",
           "bluetooth",
           "network",

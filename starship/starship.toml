@@ -1,15 +1,14 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[](#a7c080)\
 $os\
 $username\
-[](bg:#e69875 fg:#a7c080)\
+[](bg:#2A3136 fg:#1F262B)\
 $directory\
-[](fg:#e69875 bg:#d699b6)\
+[](fg:#2A3136 bg:#B07A78)\
 $git_branch\
 $git_status\
-[](fg:#d699b6 bg:#7fbbb3)\
+[](fg:#B07A78 bg:#1F262B)\
 $c\
 $elixir\
 $elm\
@@ -22,28 +21,31 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](fg:#7fbbb3 bg:#83c092)\
+[](fg:#1F262B bg:#2A3136)\
 $docker_context\
-[](fg:#83c092 bg:#3a515d)\
+[](fg:#2A3136 bg:#1F262B)\
 $time\
-[](fg:#3a515d)\
+[](fg:#1F262B)\
 \n\
 \n$character
 """
 
+# ---------------- USER ----------------
 [username]
 show_always = true
-style_user = "bg:#a7c080 fg:#2f383e"
-style_root = "bg:#a7c080 fg:#2f383e"
-format = '[$user ]($style)'
+style_user = "bg:#1F262B fg:#E6E3DE"
+style_root = "bg:#3A2F2B fg:#E6E3DE"
+format = "[ $user ]($style)"
 disabled = false
 
+# ---------------- OS ----------------
 [os]
-style = "bg:#a7c080 fg:#2f383e"
+style = "bg:#1F262B fg:#E6E3DE"
 disabled = true
 
+# ---------------- DIRECTORY ----------------
 [directory]
-style = "bg:#e69875 fg:#2f383e"
+style = "bg:#2A3136 fg:#E6E3DE"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -54,86 +56,90 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
+# ---------------- GIT ----------------
 [git_branch]
 symbol = ""
-style = "bg:#d699b6 fg:#2f383e"
-format = '[ $symbol $branch ]($style)'
+style = "bg:#B07A78 fg:#E6E3DE"
+format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "bg:#d699b6 fg:#2f383e"
-format = '[$all_status$ahead_behind ]($style)'
+style = "bg:#B07A78 fg:#3A2F2B"
+format = "[ $all_status$ahead_behind ]($style)"
 
+# ---------------- LANGUAGES ----------------
 [c]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [cpp]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [elixir]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [elm]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [golang]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [gradle]
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [haskell]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [java]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [julia]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [nodejs]
 symbol = ""
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [nim]
 symbol = "󰆥 "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [rust]
 symbol = ""
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
 [scala]
 symbol = " "
-style = "bg:#7fbbb3 fg:#2f383e"
-format = '[ $symbol ($version) ]($style)'
+style = "bg:#1F262B fg:#6A6F72"
+format = "[ $symbol ($version) ]($style)"
 
+# ---------------- DOCKER ----------------
 [docker_context]
 symbol = " "
-style = "bg:#83c092 fg:#2f383e"
-format = '[ $symbol $context ]($style)'
+style = "bg:#2A3136 fg:#E6E3DE"
+format = "[ $symbol $context ]($style)"
 
+# ---------------- TIME ----------------
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#3a515d fg:#d3c6aa"
-format = '[ ♥ $time ]($style)'
+style = "bg:#1F262B fg:#E6E3DE"
+format = "[  $time ]($style)"

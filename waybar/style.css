@@ -4,8 +4,8 @@
 }
 
 window#waybar {
-    background-color: #2d353b;
-    border-bottom: 1px solid #d3c6aa;
+    background-color: #1F262B;
+    border-bottom: 1px solid #E6E3DE;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -33,7 +33,7 @@ window#waybar {
 #cpu,
 #battery,
 #pulseaudio,
-#custom-omarchy,
+#custom-swaync,
 #custom-screenrecording-indicator,
 #custom-update {
   min-width: 12px;
