@@ -14,12 +14,12 @@ setup_zsh() {
     # ----------------------------------------------------------
     # 4. Stow zsh dotfiles (to $HOME)
     # ----------------------------------------------------------
-    if [[ -d "$HOME/dotfiles/zsh" ]]; then
+    if [[ -d "$HOME/arch/zsh" ]]; then
         info "Stowing Zsh dotfiles..."
         stow --target="$HOME" zsh
         ok "Zsh dotfiles linked."
     else
-        warn "dotfiles/zsh folder not found — skipping stow."
+        warn "arch/zsh folder not found — skipping stow."
     fi
 
     ok "Zsh setup complete."

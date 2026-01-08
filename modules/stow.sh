@@ -16,4 +16,8 @@ run_stow() {
 
         ok "$folder stowed successfully."
     done
+
+    info "🚀 Stowing starship..."
+    stow --target="$CONFIG_DIR" starship
+    ok "starship stowed successfully."
 }
