@@ -1,86 +1,35 @@
 * {
-  font-family: 'CaskaydiaMono Nerd Font Propo';
-  font-size: 100%;
+  font-family: "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font";
+  font-weight: 600;
+  font-size: 14px;
 }
 
-window#waybar {
-    background-color: #1F262B;
-    border-bottom: 1px solid #E6E3DE;
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+#waybar {
+  background-color: #1F262B;
+  border-bottom: 1px solid #E6E3DE;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 .modules-left {
-  margin-left: 8px;
-}
-
-.modules-right {
-  margin-right: 8px;
-}
-
-#workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
-}
-
-#workspaces button.empty {
-  opacity: 0.5;
-}
-
-#cpu,
-#battery,
-#pulseaudio,
-#custom-swaync,
-#custom-screenrecording-indicator,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
-
-#tray {
-  margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
-}
-
-tooltip {
-  padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
+  margin-left: 16px;
 }
 
 #clock {
-  margin-left: 8.75px;
+  background-color: transparent;
 }
 
-.hidden {
-  opacity: 0;
+.modules-right {
+  margin-right: 18px;
 }
 
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
+#tray menu {
+  background-color: @surface;
 }
 
-#custom-screenrecording-indicator.active {
-  color: #a55555;
-}
-#custom-weather {
-  margin-right: 15px;
+#custom-seperator {
+  margin: 0 -4px;
+  opacity: 0.4;
+  color: @outline;
 }

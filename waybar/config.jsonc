@@ -1,124 +1,70 @@
 {
-        "layer": "top",
-        "position": "top",
-        "reload_style_on_change": true,
-	"height": 30,
-        "modules-left": ["hyprland/workspaces"],
-        "modules-center": ["custom/weather", "clock"],
-        "modules-right": [
-          "custom/swaync",
-          "group/tray-expander",
-          "bluetooth",
-          "network",
-          "pulseaudio",
-          "custom/power"
-        ],
-        "hyprland/workspaces": {
-          "on-click": "activate",
-          "format": "{icon}",
-          "format-icons": {
-            "1": "𝟏",
-            "2": "𝟐",
-            "3": "𝟑",
-            "4": "𝟒",
-            "5": "𝟓",
-            "6": "𝟔",
-            "7": "𝟕",
-            "8": "𝟖",
-            "9": "𝟗",
-            "10": "𝟏𝟎",
-            "urgent": "",
-            "active": "",
-            "default": ""
-          },
-          "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-          }
-        },
-        "group/tray-expander": {
-        "orientation": "inherit",
-        "drawer": {
-          "transition-duration": 600,
-          "children-class": "tray-group-item"
-        },
-        "modules": ["custom/expand-icon", "tray"]
-      },
-      "custom/expand-icon": {
+  "height": 30,
+  "spacing": 16, // Gaps between modules (4px)
+  "layer": "top",
+  // Choose the order of the modules
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "group/tray-expander",
+    "custom/seperator",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+  ],
+  "hyprland/window": {
+    "format": "{class}",
+    "separate-outputs": true,
+  },
+  "clock": {
+    "tooltip": true,
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%I:%M %p}",
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "custom/expand-icon": {
         "format": " ",
         "tooltip": false
-      },
-      "tray": {
-        "icon-size": 12,
-        "spacing": 12
-      },
-      "clock": {
-        "format": "{:L%A %H:%M}",
-        "tooltip": false
-      },
-      "network": {
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "format": "{icon}",
-        "format-wifi": "{icon}",
-        "format-ethernet": "󰀂",
-        "format-disconnected": "󰤮",
-        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-disconnected": "Disconnected",
-        "interval": 3,
-        "spacing": 1,
-        "on-click": "kitty --class tui -- bash -c \"impala\""
-      },
-      "bluetooth": {
-        "format": "",
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 12,
+  },
+  "custom/seperator": {
+    "format": "❘",
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "kitty --class tui -- bash -c \"wiremix\"",
+    "tooltip": false,
+  },
+  "bluetooth": {
+    "format": "",
         "format-disabled": "󰂲",
         "format-connected": "",
         "tooltip-format": "Devices connected: {num_connections}",
-        "on-click": "blueman"
-      },
-      "custom/swaync": {
-        "tooltip": true,
-        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
-        "format": "{icon}",
-        "format-icons": {
-          "notification": "<span foreground='red'><sup></sup></span>",
-          "none": "",
-          "dnd-notification": "<span foreground='red'><sup></sup></span>",
-          "dnd-none": "",
-          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-          "inhibited-none": "",
-          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-          "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "sleep 0.1 && swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-      },
-      "custom/power": {
-        "format": " ⏻ ",
-        "on-click": "killall wlogout || wlogout --protocol layer-shell"
-        },
-      "pulseaudio": {
-        "format": "{icon}",
-        "on-click": "kitty --class tui -- bash -c \"wiremix\"",
-        "on-click-right": "pamixer -t",
-        "tooltip-format": "Playing at {volume}%",
-        "scroll-step": 5,
-        "format-muted": "",
-        "format-icons": {
-          "default": ["", "", ""]
-        },
-        "custom/weather": {
-        "exec": "~/.config/hypr/scripts/weather.sh",
-        "interval": 3600,
-        "format": "{}",
-        "return-type": "text"
-        }
-      }
+        "on-click": "kitty --class tui -- bash -c \"blueman\""
+  },
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "kitty --class tui -- bash -c \"impala\""
+  },
 }
