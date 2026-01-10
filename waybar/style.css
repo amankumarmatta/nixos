@@ -6,14 +6,24 @@
 
 #waybar {
   background-color: #1F262B;
-  border-bottom: 1px solid #E6E3DE;
-  color: #ffffff;
+  border: 1px solid #E6E3DE;
+  color: rgba(255,255,255,0.9);
   transition-property: background-color;
   transition-duration: .5s;
 }
 
+window#waybar {
+  border-radius: 12px;
+}
+
+
+
 .modules-left {
   margin-left: 16px;
+}
+
+.modules-right {
+  margin-right: 18px;
 }
 
 #workspaces button {
@@ -30,10 +40,6 @@
 #mpris,
 #clock {
   background-color: transparent;
-}
-
-.modules-right {
-  margin-right: 18px;
 }
 
 #custom-seperator {

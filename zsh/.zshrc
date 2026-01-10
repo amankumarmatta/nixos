@@ -1,4 +1,11 @@
-fastfetch
+pokemon-colorscripts --no-title -s -n pikachu | fastfetch \
+  --logo-type file-raw \
+  --logo-width 12 \
+  --logo-height 14 \
+  --logo-padding-top 4 \
+  --logo-padding-left 1 \
+  --separator " " \
+  --logo -
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -52,6 +59,10 @@ ZSH_HIGHLIGHT_STYLES[string]="fg=#CFA3A0"
 
 ZSH_HIGHLIGHT_STYLES[comment]="fg=#7A7671"
 
+# Fix Delete key across all zsh keymaps
+for map in emacs viins vicmd; do
+  bindkey -M $map '^[[3~' delete-char
+done
 
 # Aliases
 alias ls='ls --color'
